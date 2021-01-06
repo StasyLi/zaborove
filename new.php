@@ -1,7 +1,7 @@
 <?php
 
 function handle_error($user_error_message, $system_error_message) {die ($user_error_message . " " . $system_error_message);};
-$pic_place = "Users/gugun/Sites/scripts/u-images/";
+$pic_place = "u-images/";
 $image_fildname = "pict";
 
 $php_errors = array 
@@ -20,7 +20,7 @@ echo $upload_filename;
 
 function make_upload($image_fildname) {
 $name = mt_rand(0, 10000) . $image_fildname['name'];
-copy($image_fildname['tmp_name], 'u-images'.$name);
+copy($image_fildname['tmp_nameэ], 'u-images' . $name);
 }
 
 @move_uploaded_file($_FILES[$image_fildname]['tmp-name'], $upload_filename) or handle_error(" возникла проблема при сохранении вашего изображение в его постоянном месте. <br>",
