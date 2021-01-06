@@ -16,12 +16,12 @@ $_FILES[$image_fildname]['error'] == 0 or handle_error ("Возникли про
 @getimagesize($_FILES[$image_fildname]['tmp_name'])
 or handle_error("<p> Вы выбрали файл, который не является изображением<br>", $_FILES[$image_fildname]['tmp_name'] ." не является изображением");
 
-echo $upload_filename;
-
 function make_upload($image_fildname) {
 $name = mt_rand(0, 10000) . $image_fildname['name'];
-copy($image_fildname['tmp_nameэ], 'u-images' . $name);
+copy($image_fildname['tmp_name'], 'u-images' . $name);
 }
+
+echo $upload_filename;
 
 @move_uploaded_file($_FILES[$image_fildname]['tmp-name'], $upload_filename) or handle_error(" возникла проблема при сохранении вашего изображение в его постоянном месте. <br>",
 "Ошибка, связанная с правами доступа при перемещении файла в {$upload_filename}");
