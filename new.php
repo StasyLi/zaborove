@@ -1,9 +1,5 @@
 <?php
 
-
-/*
-working with photos
-
 function handle_error($user_error_message, $system_error_message) {die ($user_error_message . " " . $system_error_message);};
 $pic_place = "u-images/";
 $image_fildname = "pict";
@@ -26,10 +22,10 @@ $now++;
 }
 echo $upload_filename;
 
-@move_uploaded_file($_FILES[$image_fildname]['tmp-name'], $upload_filename) or handle error("Katastrophen!");
+@move_uploaded_file($_FILES[$image_fildname]['tmp-name'], $upload_filename) or handle_error(" возникла проблема при сохранении вашего изображение в его постоянном месте. <br>",
+"Ошибка, связанная с правами доступа при перемещении файла в {$upload_filename}");
 
  
-*/
 
 $link = mysqli_connect("127.0.0.1", "root", "pas4root", "zaborove");
 mysqli_select_db($link, "zaborove") or die ("<p>Database selection error: ".mysqli_error()."</p>");
