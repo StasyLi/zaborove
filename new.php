@@ -1,7 +1,7 @@
 <?php
 
 function handle_error($user_error_message, $system_error_message) {die ($user_error_message . " " . $system_error_message);};
-$pic_place = "u-images/";
+$pic_place = "/u-images/";
 $image_fildname = "pict";
 
 $php_errors = array 
