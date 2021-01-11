@@ -20,7 +20,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $feedback = $_POST['feedback'];
 
-$query = "INSERT INTO feedbacks (Name, Email, Feedback, Photo) VALUES ('Alyona', 'mail.ru', 'FBB', 'address for phoro');";
+$query = "INSERT INTO feedbacks (Name, Email, Feedback, Photo) VALUES ('{$name}', '{$email}', '{$feedback}', 'address-for-photo');";
 $result = mysqli_query($link, $query);
 
 if ($result == false) {
