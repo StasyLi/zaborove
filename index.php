@@ -16,7 +16,7 @@ print("OH GOD! We've got a problem with link <br>");
 if ($link!=false) {
 print("Everything's alright with link <br>");
 }
-$uploaddir = 'scripts/u-images/';
+$uploaddir = '/scripts/u-images/';
 $uploadfile = $uploaddir . basename($_FILES['pict']['name']);
 
 define ('SITE_ROOT', realpath(dirname(__FILE__)));
@@ -25,7 +25,7 @@ define ('SITE_ROOT', realpath(dirname(__FILE__)));
 //move_uploaded_file($_FILES['pict']['tmp_name'],  "$uploadfile") - that was in if construction
 
 
-if (move_uploaded_file($_FILES['file']['tmp_name'], "$uploadfile")) {
+if (move_uploaded_file($_FILES['pict']['tmp_name'], "$uploaddir")) {
 echo ("The uploading of our admirable file ended successfully!!!!<br>");
 } else {
 echo ("Oh no! :/ THere's an error with uploading.<br>");
@@ -77,7 +77,7 @@ print("Name: " . $row['Name'] . ";<br>Feelings: " . $row['Feedback'] . "<br>");
 </fieldset>
 
 <fieldset>
-<input type="hidden" name="MAX_FILE_SIZE" value = "2000000">
+<input type="hidden" name="MAX_FILE_SIZE" value = "20000000">
 <label for="pict">Your photo</label>
 <input type="file" name="pict">
 </fieldset>
